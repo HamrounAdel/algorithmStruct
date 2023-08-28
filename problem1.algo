@@ -1,0 +1,30 @@
+
+ALGORITHM problem2
+
+VAR
+    t1 : ARRAY_OF FLOAT[4];
+     t2 : ARRAY_OF FLOAT[5];
+     s:FLOAT;
+    i,j:INTEGER;
+BEGIN
+    FOR i FROM 0 TO 3 STEP 1  DO
+        write("donner le valeur de  t1")
+        read(t1(i))
+    END_FOR
+     FOR j FROM 0 TO 4 STEP 1  DO
+        write("donner le valeur de  t2")
+        read(t2(j))
+    END_FOR
+    s=0;
+    FOR i FROM 0 TO 3 STEP 1  DO
+        FOR j FROM 0 TO 4 STEP 1  DO
+            IF (t1(i)=t2(j)) THEN
+                i=i+1;
+                j=j+1;
+            else_if
+            write(t(i))
+            s=s+t(i)
+        END_FOR
+        
+    END_FOR
+END
