@@ -1,6 +1,7 @@
-PROCEDURE Dot_product(v1,v2 : ARRAY_OF FLOAT[3], ps:FLOAT)
+PROCEDURE Dot_product(v1,v2 : ARRAY_OF FLOAT[3])
 VAR
     i:INTEGER;
+    ps:FLOAT;
 BEGIN
    ps:=0;
     FOR i FROM 0 TO 2 STEP 1  DO
@@ -8,10 +9,10 @@ BEGIN
     END_FOR
 END
 
-FUNCTION prodScal(v1,v2 : ARRAY_OF FLOAT[3], ps:FLOAT) 
+FUNCTION prodScal(v1,v2 : ARRAY_OF FLOAT[3]) :FLOAT
 VAR
    i:INTEGER;
-    
+    ps:FLOAT
 BEGIN
     ps=0;
     FOR i FROM 0 TO 2 STEP 1  DO
@@ -36,9 +37,16 @@ FOR i FROM 0 TO 2 STEP 1  DO
     Read(v2(i));
 END_FOR
  
-   Dot_product(v1,v2,ps)
+   Dot_product(v1,v2)
    write(ps);
-   IF (ps=0) THEN
+    verif(ps)
+END
+
+PROCEDURE verif(ps:INTEGER)
+VAR
+    
+BEGIN
+      IF (ps=0) THEN
        write("vectors are orthogonal")
    ELSE
        write(" vectors are not orthogonal")
